@@ -7,7 +7,7 @@ replicaCount: 5
 image:
   repository: wiking80/fpi
   pullPolicy: IfNotPresent
-  tag: v0.0.5
+  tag: v0.0.6
 
 imagePullSecrets: []
 nameOverride: "fpi"
