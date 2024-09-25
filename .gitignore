@@ -27,7 +27,6 @@ nox/
 
 # Alembic migrations
 migrations/versions/*.pyc
-alembic.ini
 
 # Docker-specific files
 .env
