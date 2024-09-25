@@ -51,7 +51,7 @@ venv/
 *.env
 
 # Ignore dependencies
-poetry.lock
+#poetry.lock
 
 # Databases
 test.db
