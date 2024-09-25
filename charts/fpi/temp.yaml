@@ -1,0 +1,20 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: cluster-with-metrics
+spec:
+  instances: 3
+
+  bootstrap:
+    initdb:
+      database: app
+      owner: app
+      dataChecksums: true
+      secret:
+        name: app-secret
+
+  storage:
+    size: 1Gi
+
+  monitoring:
+    enablePodMonitor: true

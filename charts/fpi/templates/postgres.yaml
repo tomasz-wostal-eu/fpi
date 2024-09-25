@@ -1,0 +1,18 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: {{ .Values.postgres.name | default "fpi" }}
+spec:
+  instances: {{ .Values.postgres.instances | default 3 }}
+
+  bootstrap:
+    initdb:
+      database: {{ .Values.postgres.bootstrap.initdb.database | default "fpi" }}
+      owner: {{ .Values.postgres.bootstrap.initdb.owner | default "fpi" }}
+      dataChecksums: {{ .Values.postgres.bootstrap.initdb.dataChecksums | default true }}
+
+  storage:
+    size: {{ .Values.postgres.storage.size | default "1Gi" }}
+
+  monitoring:
+    enablePodMonitor: {{ .Values.postgres.monitoring.enablePodMonitor | default true }}

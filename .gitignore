@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Poetry virtual environments
+.poetry/
+
+# Pytest cache
+.pytest_cache/
+.cache/
+.coverage
+htmlcov/
+.tox/
+noxfile.py
+nox/
+
+# Alembic migrations
+migrations/versions/*.pyc
+alembic.ini
+
+# Docker-specific files
+.env
+*.log
+*.tmp
+
+# Ignore system files
+*.DS_Store
+*.vscode/
+.idea/
+
+# Ignore test data
+tests/__pycache__/
+tests/.pytest_cache/
+tests/*.pyc
+
+# Ignore virtual environments
+venv/
+.env/
+.envrc
+*.env
+
+# Ignore dependencies
+poetry.lock
+
+# Databases
+test.db
+
+# Other files
+pipelines/
+workflow.yaml

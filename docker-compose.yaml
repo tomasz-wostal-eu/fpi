@@ -1,0 +1,53 @@
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    # environment:
+    #   OTEL_EXPORTER_OTLP_ENDPOINT: "http://otel-collector:4317"
+    depends_on:
+      - db
+      - otel-collector
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - plants-network
+
+  db:
+    image: postgres:15
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: yourusername
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: fpi
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    networks:
+      - plants-network
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    ports:
+      - "4317:4317"   # For gRPC
+      - "4318:4318"   # For HTTP
+      - 13133:13133
+    networks:
+      - plants-network
+
+volumes:
+  postgres_data:
+
+networks:
+  plants-network:
+    driver: bridge
