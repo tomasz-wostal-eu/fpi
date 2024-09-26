@@ -58,3 +58,4 @@ test.db
 # Other files
 pipelines/
 workflow.yaml
+progressive-sync.yaml
