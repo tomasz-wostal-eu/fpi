@@ -68,9 +68,6 @@ allow_zero_version = true
 no_git_verify = false
 tag_format = "v{version}"
 version_variables = ["src/fpi/version.py:__version__"] # we added this
-upload_to_PyPI = false
-upload_to_release = true
-build_command = "pip install poetry && poetry build"
 
 [tool.semantic_release.branches.main]
 match = "(main|master)"
@@ -115,3 +112,9 @@ insecure = false
 [tool.semantic_release.publish]
 dist_glob_patterns = ["dist/*"]
 upload_to_vcs_release = true
+
+# [tool.semantic_release.plugins]
+# commit_parser = "semantic_release.commit_parser"
+# version_scheme = "semantic_release.version_scheme"
+# changelog = "semantic_release.changelog"
+# github = "semantic_release.github"
