@@ -68,6 +68,9 @@ allow_zero_version = true
 no_git_verify = false
 tag_format = "v{version}"
 version_variables = ["src/fpi/version.py:__version__"] # we added this
+upload_to_PyPI = false
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
 
 [tool.semantic_release.branches.main]
 match = "(main|master)"
