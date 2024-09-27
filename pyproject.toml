@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fpi"
-version = "0.0.13"
+version = "0.0.14"
 description = ""
 authors = ["Tomasz Wostal <tomasz@wostal.eu>"]
 readme = "README.md"
