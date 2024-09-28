@@ -31,6 +31,8 @@ COPY ./src/alembic /app/src/alembic
 
 # Expose the FastAPI port
 EXPOSE 8000
+RUN poetry add python-semantic-release
+RUN poetry run semantic-release version
 
 # Command to run the FastAPI application
 CMD ["bash", "-c", "poetry run alembic upgrade head && opentelemetry-instrument uvicorn src.fpi.main:app --host 0.0.0.0 --port 8000"]
