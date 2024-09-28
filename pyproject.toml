@@ -49,14 +49,6 @@ start-fpi = "src.fpi.main:app"
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 
-[tool.mypy]
-python_version = "3.10"  # Adjust this to your Python version
-check_untyped_defs = true  # Check functions without type annotations
-disallow_untyped_calls = true  # Ensure calls to untyped functions raise errors
-ignore_missing_imports = true  # Ignore missing imports from third-party libraries
-show_error_codes = true  # Helpful when you want to check specific error codes
-strict = true  # Use strict mode for more robust type checking
-
 [tool.semantic_release]
 assets = []
 build_command_env = []
@@ -118,8 +110,3 @@ insecure = false
 dist_glob_patterns = ["dist/*"]
 upload_to_vcs_release = true
 
-[tool.semantic_release.plugins]
-# commit_parser = "semantic_release.commit_parser"
-# version_scheme = "semantic_release.version_scheme"
-# changelog = "semantic_release.changelog"
-# github = "semantic_release.github"
