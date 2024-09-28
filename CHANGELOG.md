@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.5.1 (2024-09-28)
+
+### Fix
+
+* fix: fix version ([`a58b800`](https://github.com/tomasz-wostal-eu/fpi/commit/a58b800534369ab6754f0d456dd76fd4c7fb3ad4))
+
 ## v0.5.0 (2024-09-28)
 
 ### Feature
