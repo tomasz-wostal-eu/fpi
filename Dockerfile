@@ -5,6 +5,7 @@ FROM python:3-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/app/src
+ENV PIP_ROOT_USER_ACTION=ignore
 
 # Set the working directory
 WORKDIR /app
@@ -31,8 +32,6 @@ COPY ./src/alembic /app/src/alembic
 
 # Expose the FastAPI port
 EXPOSE 8000
-RUN poetry add python-semantic-release
-RUN poetry run semantic-release version
 
 # Command to run the FastAPI application
 CMD ["bash", "-c", "poetry run alembic upgrade head && opentelemetry-instrument uvicorn src.fpi.main:app --host 0.0.0.0 --port 8000"]
