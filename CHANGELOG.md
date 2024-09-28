@@ -1,8 +1,10 @@
 # CHANGELOG
 
-## Unreleased
+## v0.1.0 (2024-09-28)
 
 ### Feature
+
+* feat: add automatic versioning ([`c7c5ad2`](https://github.com/tomasz-wostal-eu/fpi/commit/c7c5ad2c06d39263ad44dc46b744db9f542c338c))
 
 * feat: add automatic versioning ([`055e4ce`](https://github.com/tomasz-wostal-eu/fpi/commit/055e4ceb49079b03f90c8bab2dea900308caa410))
 
