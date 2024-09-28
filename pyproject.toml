@@ -74,6 +74,11 @@ match = "(main|master)"
 prerelease_token = "rc"
 prerelease = false
 
+[tool.semantic_release.branches.dev]
+match = "(dev|next)"
+prerelease_token = "rc"
+prerelease = true
+
 [tool.semantic_release.changelog]
 template_dir = "templates"
 changelog_file = "CHANGELOG.md"
@@ -113,7 +118,7 @@ insecure = false
 dist_glob_patterns = ["dist/*"]
 upload_to_vcs_release = true
 
-# [tool.semantic_release.plugins]
+[tool.semantic_release.plugins]
 # commit_parser = "semantic_release.commit_parser"
 # version_scheme = "semantic_release.version_scheme"
 # changelog = "semantic_release.changelog"
